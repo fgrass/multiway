@@ -1,7 +1,7 @@
 %% Load data
 clear
 startup
-imgset = 'Car'; %'Car','Duck','Face','Motorbike','Winebottle'
+imgset = 'Winebottle'; %'Car','Duck','Face','Motorbike','Winebottle'
 datapath = sprintf('dataset/WILLOW-ObjectClass/%s/',imgset);
 savepath = sprintf('result/willow/%s',imgset);
 if ~exist(savepath, 'dir')
@@ -58,13 +58,13 @@ if showmatch
         for j = i+1:size(pMatch,2)
             clf;
             if ~isempty(pMatch(i,j).X)
-                if isdiag(X1((i-1)*10+1:i*10,(j-1)*10+1:j*10)) && isdiag(X2((i-1)*10+1:i*10,(j-1)*10+1:j*10)) 
+                if isdiag(X1((i-1)*10+1:i*10,(j-1)*10+1:j*10)) &&  isdiag(X2((i-1)*10+1:i*10,(j-1)*10+1:j*10)) 
                     continue
                 end
                 subplot('position',[0 0.5 1 0.48]);
-                visPMatch(datapath,pMatch(i,j),3,'th',0.01);
+                visPMatchGT(datapath,pMatch(i,j),3,'th',0.01);
                 subplot('position',[0 0 1 0.48]);
-                visPMatch(datapath,jMatch(i,j),3,'th',0.01);
+                visPMatchGT(datapath,jMatch(i,j),3,'th',0.01);
                 fprintf('%d-%d\n',i,j);
                 pause
             end

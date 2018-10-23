@@ -2,3 +2,4 @@ result/
 dataset/
 hypercols/bvlc_alexnet.npy
 hypercols/__pycache__/
+*~
