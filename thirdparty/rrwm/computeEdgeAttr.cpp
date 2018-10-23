@@ -33,7 +33,7 @@ void getGraphAttr_NormPolar(double* pFrame, int nFeat, double* pOut)
         Ti[3] = pFrame[offset_i+3]; // a21
         Ti[4] = pFrame[offset_i+5]; // a22
         Ti[5] = pFrame[offset_i+1]; // y
-        det_i = abs(Ti[0]*Ti[4] - Ti[1]*Ti[3]);
+        det_i = fabs(Ti[0]*Ti[4] - Ti[1]*Ti[3]);
         MatInv(Ti,Ti_inv);
         
         for(j = 0; j < nFeat; j++)
@@ -53,7 +53,7 @@ void getGraphAttr_NormPolar(double* pFrame, int nFeat, double* pOut)
                 theta = atan2( Pj_unit[1], Pj_unit[0]);
                 rho = sqrt(Pj_unit[0]*Pj_unit[0] + Pj_unit[1]*Pj_unit[1]);
 
-                det_j = abs(pFrame[offset_j+2]*pFrame[offset_j+5] - pFrame[offset_j+4]*pFrame[offset_j+3]);
+                det_j = fabs(pFrame[offset_j+2]*pFrame[offset_j+5] - pFrame[offset_j+4]*pFrame[offset_j+3]);
                 scale = log(det_j/det_i)/log(2.0);
                 
             }
