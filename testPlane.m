@@ -1,9 +1,9 @@
 %% Load data
 clear
 startup
-imgset = 'Motorbike'; %'Car','Duck','Face','Motorbike','Winebottle'
-datapath = sprintf('dataset/WILLOW-ObjectClass/%s/',imgset);
-savepath = sprintf('result/willow/%s',imgset);
+imgset = 'AC-130'; %'AC-130'
+datapath = sprintf('dataset/Planes/%s/',imgset);
+savepath = sprintf('result/plane/%s',imgset);
 if ~exist(savepath, 'dir')
     mkdir(savepath);
 end
